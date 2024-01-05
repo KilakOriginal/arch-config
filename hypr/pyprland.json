@@ -1,0 +1,23 @@
+{
+	"pyprland": {
+		"plugins": ["scratchpads", "magnify"]
+	},
+	"scratchpads": {
+		"terminal": {
+			"command": "kitty --class scratchpad",
+			"margin": 50
+		},
+		"explorer": {
+			"command": "nemo --class scratchpad",
+			"margin": 50,
+			"lazy": true
+		},
+		"pavucontrol": {
+			"command": "pavucontrol",
+			"margin": 50,
+			"unfocus": "hide",
+			"animation": "fromTop",
+			"lazy": true
+		}
+	}
+}

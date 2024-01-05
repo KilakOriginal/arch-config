@@ -1,0 +1,4 @@
+mode_drun
+allow_images=true
+hide_scroll=true
+key_expand=Tab
