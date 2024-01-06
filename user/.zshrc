@@ -115,8 +115,6 @@ path+=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="colorls --sd -A"
-alias wezterm='flatpak run org.wezfurlong.wezterm'
-# alias mkcd="mkdir && cd $_"
 alias rnote="flatpak run com.github.flxzt.rnote"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
