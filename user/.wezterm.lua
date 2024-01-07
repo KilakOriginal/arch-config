@@ -13,7 +13,7 @@ end
 -- Config
 
 -- Color scheme:
-config.color_scheme = 'Dark Ocean (terminal.sexy)'
+config.color_scheme = 'Argonaut'
 
 -- Window
 config.window_background_opacity = 0.85
