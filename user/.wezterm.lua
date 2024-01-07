@@ -21,7 +21,7 @@ config.window_background_opacity = 0.85
 config.hide_tab_bar_if_only_one_tab = true
 
 -- Font
-config.font = wezterm.font_with_fallback { 'JetBrainsMono', 'Noto Color Emoji', 'dengxian', 'NanumSquare Neo', 'Font Awesome 6 Free', }
+config.font = wezterm.font_with_fallback { 'JetBrainsMono', 'Noto Color Emoji', 'Noto Sans SC', 'YES24', 'Font Awesome 6 Free', }
 config.font_size = 14
 config.line_height = 1.0
 

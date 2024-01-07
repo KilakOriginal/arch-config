@@ -1,49 +1,69 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, "Font Awesome 6 Free", JetBrainsMono, "Noto Sans SC", "YES24";
-    font-size: 13pt;
+    font-family: FontAwesome, Roboto, "JetBrainsMono Nerd Font", DengXian, "NanumSquare Neo", Arial, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.8);
+    /*background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: #fefffd;
-    background: transparent;
-    transition-property: background-color;
-    transition-duration: .5s;
+    /*transition-property: background-color;
+    transition-duration: .5s;*/ 
+    background: none;
 }
 
-#workspaces {
-    background: #fefffd;
-    margin: 0;
-    padding: 4px 2px;
-    border-radius: 18px;
-    font-weight: normal;
-    font-style: normal;
-    opacity:0.8;
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Avoid rounded borders under each button name */
+    background-color: rgba(200, 200, 200, 0.35);
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
 }
 
 #workspaces button {
-    margin: 0px 3px;
-    padding: 0 4;
-    border: none;
-    border-radius: 30px;
-    background-color: blue;
-    transition: all 0.3s ease-in-out;
-    opacity:0.4;
+    /*padding: 0 5px;*/
+    margin-left: 10px;
+    margin-right: -7px;
+    background-color: rgba(200, 200, 200, 0.4);
+    color: #fefffd;
+    border-radius: 0 0 .8rem .8rem;
+}
+
+#workspaces button:hover {
+    background: rgba(188, 13, 216, 0.8);
 }
 
 #workspaces button.active {
     background: linear-gradient(to right, #c30fd3, #8600f5);
-    min-width: 40px;
-    background-size: 400% 400%;
-    transition: all 0.3s ease-in-out;
-    opacity:0.9;
-}
-
-#workspaces button:hover {
-    background: linear-gradient(to right, #c30fd3, #8600f5);
-    min-width: 40px;
-    background-size: 400% 400%;
+    box-shadow: 0 0 4px 0px #c30fd3;
+    color: #fefffd;
 }
 
 #workspaces button.urgent {
@@ -71,38 +91,34 @@ window#waybar {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    margin: 0 8px;
-    padding: 1px 10px;
-    color: #444444;
-    background: #fefffd;
-    border-radius: 18px;
+    margin-left: 0px;
+    padding: 0 10px;
+    color: #fefffd;
+    background-color: rgba(200, 200, 200, 0.4);
 }
 
-#window {
-    background: #fefffd;
-    /*margin: 5px 15px 5px 0px;*/
-    padding: 1px 10px;
-    border-radius: 18px;
-    color: #101010;
-    font-size:16px;
-    font-weight:normal;
-    opacity:0.8;
+#window,
+#workspaces {
+	    margin: 0 10px;
 }
 
-window#waybar.empty #window {
-    background-color:transparent;
-}
-
+/* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0px;
 }
 
+/* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0px;
 }
 
 #clock {
-    margin-right: 0;
+    margin-right: 10px;
+    border-radius:0 12px 12px 0;
+}
+
+#pulseaudio {
+	border-radius: 12px 0 0 12px;
 }
 
 #battery.charging, #battery.plugged {

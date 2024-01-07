@@ -81,4 +81,6 @@ return require('packer').startup(function(use)
   requires = {'nvim-tree/nvim-web-devicons'}
   }
 
+  use 'feline-nvim/feline.nvim'
+
 end)
