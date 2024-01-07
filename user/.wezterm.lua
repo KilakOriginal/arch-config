@@ -13,7 +13,7 @@ end
 -- Config
 
 -- Color scheme:
-config.color_scheme = 'Argonaut'
+config.color_scheme = 'Colors (base16)' -- Colors (base16), Brewer (base16), Classic Dark (base16), ayu, Argonaut, Atelierdune (dark) (terminal.sexy)
 
 -- Window
 config.window_background_opacity = 0.85
