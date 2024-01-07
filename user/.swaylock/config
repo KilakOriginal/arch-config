@@ -3,7 +3,7 @@ font="Roboto"
 
 clock
 timestr=%R
-datestr=%Y/%m/%d
+datestr=%d/%m/%Y
 
 image=/home/malik/Pictures/Wallpapers/1338182.png
 

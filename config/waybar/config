@@ -1,8 +1,8 @@
 {
     // General waybar config
     "layer": "top",
-    "margin-top": 5,
-    "margin-bottom": 5,
+    "margin-top": 10,
+    "margin-bottom": 0,
     "margin-left": 10,
     "margin-right": 10,
     "spacing": 0,
@@ -13,32 +13,6 @@
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "network", "battery", "clock"],
 
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -49,49 +23,12 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
     "clock": {
         // "timezone": "Europe/Berlin",
 	"format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"today-format": "<span color='#ebf09f'>{}</span>",
-        "format-alt": "{:%Y-%m-%d   %H:%M}"
+        "format-alt": "{:%d/%m/%Y  |  %H:%M}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -115,21 +52,18 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
-            "warning": 30,
+            // "good": 90,
+            "warning": 35,
             "critical": 15
         },
         "format": "{icon}",
         "format-charging": "",
         "format-plugged": "",
-        "format-alt": "{capacity}%  {icon}",
-	"tooltip-format": "{capacity}% remaining",
+        "format-alt": "{capacity} %   {icon}",
+	"tooltip-format": "{capacity} % remaining",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -139,13 +73,13 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "⚠",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}"
-	"format-alt": "{signalStrength}%  "
+	"format-alt": "{signalStrength} %   "
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon}  | {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{icon}  | {format_source}",
+        "format-bluetooth-muted": " {icon}  | {format_source}",
         "format-muted": "  | {format_source}",
         "format-source": "",
         "format-source-muted": "",
@@ -161,34 +95,21 @@
 		"tooltip-format": "{volume}% | {desc}",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ 'toggle'"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "hyprland/workspaces" : {
         "on-click": "activate",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
         "active-only": false,
         "all-outputs": true,
         "format": "{icon}",
-        "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
-        }
+        //"format-icons": {
+	//		"urgent": "",
+	//		"active": "",
+	//		"default": ""
+        //}
     },
     "hyprland/window": {
         "separate-outputs": true
     }
-
 }
-
-
 

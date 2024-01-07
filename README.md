@@ -13,7 +13,6 @@ This is my Arch Linux configuration.
 - [Hyprshot](https://github.com/Gustash/Hyprshot)
 - [Flameshot](https://github.com/flameshot-org/flameshot/releases)
 - [Waybar](https://github.com/Alexays/Waybar)
-- [Pyprland](https://pypi.org/project/pyprland/)
 - [Neovim](https://neovim.io/)
     - [packer.nvim](https://github.com/wbthomason/packer.nvim)
     - For a list of plugins see `./config/nvim/lua/malik/packer.lua`
@@ -39,6 +38,7 @@ This is my Arch Linux configuration.
 - [Noto Sans SC](https://fonts.google.com/noto/specimen/Noto+Sans+SC)
 - [Noto Sans TC](https://fonts.google.com/noto/specimen/Noto+Sans+TC)
 - [Cooper Hewitt](https://www.cooperhewitt.org/open-source-at-cooper-hewitt/cooper-hewitt-the-typeface-by-chester-jenkins/)
+- [Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
 
 > [!CAUTION]
 > The install script will overwrite any symlinks already present!

@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, "Font Awesome 6 Free", JetBrainsMono, "Noto Sans SC", "YES24";
-    font-size: 13pt;
+    font-family: Roboto,  JetBrainsMono, "Noto Sans SC", "YES24";
+    font-size: 12pt;
 }
 
 window#waybar {
@@ -17,9 +17,10 @@ window#waybar {
     margin: 0;
     padding: 4px 2px;
     border-radius: 18px;
+    border: none;
     font-weight: normal;
     font-style: normal;
-    opacity:0.8;
+    opacity: 1;
 }
 
 #workspaces button {
@@ -27,22 +28,29 @@ window#waybar {
     padding: 0 4;
     border: none;
     border-radius: 30px;
-    background-color: blue;
+    background: #555555;
+    color: #fefffd;
     transition: all 0.3s ease-in-out;
-    opacity:0.4;
+    opacity:0.5;
 }
 
 #workspaces button.active {
-    background: linear-gradient(to right, #c30fd3, #8600f5);
-    min-width: 40px;
+    background: #222222;
+    min-width: 45px;
     background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
     opacity:0.9;
 }
 
 #workspaces button:hover {
-    background: linear-gradient(to right, #c30fd3, #8600f5);
-    min-width: 40px;
+    background: #000000;
+    min-width: 30px;
+    background-size: 400% 400%;
+}
+
+#workspaces button.active:hover {
+    background: #111111;
+    min-width: 45px;
     background-size: 400% 400%;
 }
 
@@ -50,12 +58,15 @@ window#waybar {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+#clock {
+    margin: 0 0 0 8px;
+    padding: 1px 10px;
+    color: #444444;
+    background: #fefffd;
+    border-radius: 18px;
+    border: none;
 }
 
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -76,15 +87,17 @@ window#waybar {
     color: #444444;
     background: #fefffd;
     border-radius: 18px;
+    border: none;
+    font-family: "Font Awesome 6 Free";
+    font-size: 10pt;
 }
 
 #window {
     background: #fefffd;
-    /*margin: 5px 15px 5px 0px;*/
     padding: 1px 10px;
     border-radius: 18px;
+    border: none;
     color: #101010;
-    font-size:16px;
     font-weight:normal;
     opacity:0.8;
 }
@@ -101,19 +114,8 @@ window#waybar.empty #window {
     margin-right: 0px;
 }
 
-#clock {
-    margin-right: 0;
-}
-
 #battery.charging, #battery.plugged {
     color: #06d6a0;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
 }
 
 #battery.warning:not(.charging) {
@@ -121,62 +123,11 @@ window#waybar.empty #window {
 }
 
 #battery.critical:not(.charging) {
-    /*background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;*/
     color: #ef476f;
 }
 
 label:focus {
     background-color: #000000;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
 }
 
 #mpd {
@@ -194,30 +145,6 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
 }
 
 #scratchpad {
