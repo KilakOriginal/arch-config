@@ -20,7 +20,7 @@ window#waybar {
     border: none;
     font-weight: normal;
     font-style: normal;
-    opacity: 1;
+    opacity: 0.8;
 }
 
 #workspaces button {
@@ -63,6 +63,7 @@ window#waybar {
     padding: 1px 10px;
     color: #444444;
     background: #fefffd;
+    opacity: 0.8;
     border-radius: 18px;
     border: none;
 }
@@ -86,6 +87,7 @@ window#waybar {
     padding: 1px 10px;
     color: #444444;
     background: #fefffd;
+    opacity: 0.8;
     border-radius: 18px;
     border: none;
     font-family: "Font Awesome 6 Free";
