@@ -6,14 +6,14 @@
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0.8);
-    color: #fefffd;
+    color: #eff6e0;
     background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 #workspaces {
-    background: #fefffd;
+    background: #eff6e0;
     margin: 0;
     padding: 4px 2px;
     border-radius: 18px;
@@ -28,14 +28,14 @@ window#waybar {
     padding: 0 4;
     border: none;
     border-radius: 30px;
-    background: #555555;
-    color: #fefffd;
+    background: #39545e;
+    color: #eff6e0;
     transition: all 0.3s ease-in-out;
     opacity:0.5;
 }
 
 #workspaces button.active {
-    background: #222222;
+    background: #124559;
     min-width: 45px;
     background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
@@ -43,13 +43,13 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: #000000;
+    background: #01161e;
     min-width: 30px;
     background-size: 400% 400%;
 }
 
 #workspaces button.active:hover {
-    background: #111111;
+    background: #0c2c39;
     min-width: 45px;
     background-size: 400% 400%;
 }
@@ -61,8 +61,8 @@ window#waybar {
 #clock {
     margin: 0 0 0 8px;
     padding: 1px 10px;
-    color: #444444;
-    background: #fefffd;
+    color: #01161e;
+    background: #eff6e0;
     opacity: 0.8;
     border-radius: 18px;
     border: none;
@@ -77,16 +77,11 @@ window#waybar {
 #network,
 #pulseaudio,
 #wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
+#mode {
     margin: 0 8px;
     padding: 1px 10px;
-    color: #444444;
-    background: #fefffd;
+    color: #01161e;
+    background: #eff6e0;
     opacity: 0.8;
     border-radius: 18px;
     border: none;
@@ -95,11 +90,11 @@ window#waybar {
 }
 
 #window {
-    background: #fefffd;
+    background: #eff6e0;
     padding: 1px 10px;
     border-radius: 18px;
     border: none;
-    color: #101010;
+    color: #01161e;
     font-weight:normal;
     opacity:0.8;
 }
@@ -117,42 +112,18 @@ window#waybar.empty #window {
 }
 
 #battery.charging, #battery.plugged {
-    color: #06d6a0;
+    color: #38b000;
 }
 
 #battery.warning:not(.charging) {
-	color: #ffd166;
+	color: #f6ae2d;
 }
 
 #battery.critical:not(.charging) {
-    color: #ef476f;
+    color: #bc4749;
 }
 
 label:focus {
     background-color: #000000;
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
-}
