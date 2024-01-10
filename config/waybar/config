@@ -9,7 +9,7 @@
     "height": 16,
 
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "custom/wvkbd"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "network", "battery", "clock"],
 
@@ -22,6 +22,12 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "custom/wvkbd": {
+	    "format": "{icon}",
+	    "format-icons": [""],
+	    "tooltip-format": "Toggle virtual keyboard",
+	    "on-click": "if pgrep wvkbd-mobintl; then killall wvkbd-mobintl; else wvkbd-mobintl; fi"
     },
     "clock": {
         // "timezone": "Europe/Berlin",

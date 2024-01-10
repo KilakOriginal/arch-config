@@ -68,6 +68,16 @@ window#waybar {
     border: none;
 }
 
+#custom-wvkbd {
+    margin: 0 0 0 16px;
+    padding: 1px 10px;
+    color: #01161e;
+    background: #eff6e0;
+    opacity: 0.8;
+    border-radius: 18px;
+    border: none;
+}
+
 #battery,
 #cpu,
 #memory,
@@ -76,8 +86,7 @@ window#waybar {
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#mode {
+#wireplumber {
     margin: 0 8px;
     padding: 1px 10px;
     color: #01161e;
