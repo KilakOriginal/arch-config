@@ -27,7 +27,7 @@
 	    "format": "{icon}",
 	    "format-icons": [""],
 	    "tooltip-format": "Toggle virtual keyboard",
-	    "on-click": "if pgrep wvkbd-mobintl; then killall wvkbd-mobintl; else wvkbd-mobintl; fi"
+	    "on-click": "if pgrep wvkbd-mobintl; then killall wvkbd-mobintl; else wvkbd-mobintl --landscape-layers landscape,landscapespecial -L 300; fi"
     },
     "clock": {
         // "timezone": "Europe/Berlin",
