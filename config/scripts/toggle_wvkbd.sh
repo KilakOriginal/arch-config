@@ -1,6 +1,6 @@
 #/bin/sh
 
-state='off'
+state='on'
 
 if [ $state = 'on' ]; then
     sed -i 's/"modules-left": \["hyprland\/workspaces", "custom\/wvkbd"\]/"modules-left": \["hyprland\/workspaces"\]/g' ~/.config/waybar/config \
