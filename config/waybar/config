@@ -9,7 +9,7 @@
     "height": 16,
 
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "custom/wvkbd"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "network", "battery", "clock"],
 
