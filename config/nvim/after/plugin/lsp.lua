@@ -8,7 +8,7 @@ lsp.ensure_installed({
   'bashls', -- bash
   'cssls',  -- css
   'html',   -- html
-  'hls',    -- haskell
+  --'hls',    -- haskell
   'jsonls', -- json
   'jdtls',  -- java
   'zls',    -- zig

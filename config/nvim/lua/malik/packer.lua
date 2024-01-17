@@ -83,4 +83,6 @@ return require('packer').startup(function(use)
 
   use 'feline-nvim/feline.nvim'
 
+  use 'mrcjkb/haskell-tools.nvim'
+
 end)
