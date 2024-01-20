@@ -2,9 +2,7 @@
     main-bg:            #01161ee6;
     main-fg:            #eff6e0ff;
     main-br:            #eff6e0ff;
-    main-ex:            #eff6e0cc;
-    main-sb:            #124559cc;
-    main-bb:            #aec3b0cc;
+    main-ex:            #eff6e0ff;
     select-bg:          #eff6e0ff;
     select-fg:          #01161eff;
     separatorcolor:     transparent;

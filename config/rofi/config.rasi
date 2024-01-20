@@ -1,6 +1,6 @@
 // Config //
 configuration {
-    modi:                        "drun,filebrowser,window";
+    modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
     display-drun:                "";
     display-run:                 "";
@@ -9,7 +9,7 @@ configuration {
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
     font:                        "JetBrainsMono Nerd Font 14";
-    icon-theme:                  "Tela-circle-dracula";
+    icon-theme:                  "candy";
 }
 
 @theme "~/.config/rofi/themes/theme.rasi"
@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      600px;
-    width:                       900px;
+    height:                      500px;
+    width:                       800px;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -35,7 +35,7 @@ mainbox {
     spacing:                     0px;
     padding:                     0px;
     orientation:                 vertical;
-    children:                    [ "inputbar" , "listbox" ];
+    children:                    [ "inputbar" , "listbox" , "mode-switcher" ];
     background-color:            transparent;
     background-image:            url("~/.config/swww/wall.blur", height);
 }
@@ -44,35 +44,26 @@ mainbox {
 // Inputs //
 inputbar {
     enabled:                     true;
-    spacing:                     0px;
-    padding:                     80px;
     children:                    [ "entry" ];
-    background-color:            @main-sb;
-    background-image:            url("~/.config/swww/wall.rofi", width);
 }
 entry {
-    border-radius:               30px;
-    enabled:                     true;
-    spacing:                     0px;
-    padding:                     20px;
-    text-color:                  @main-fg;
-    background-color:            @main-bg;
+    enabled:                     false;
 }
 
 
 // Lists //
 listbox {
-    padding:                     30px;
+    padding:                     0px;
     spacing:                     0px;
     orientation:                 horizontal;
-    children:                    [ "listview" , "mode-switcher" ];
-    background-color:            @main-bg;
+    children:                    [ "listview" ];
+    background-color:            transparent;
 }
 listview {
-    padding:                     10px;
+    padding:                     30px;
     spacing:                     10px;
     enabled:                     true;
-    columns:                     2;
+    columns:                     5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -81,21 +72,24 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     cursor:                      "default";
-    background-color:            transparent;
+    background-color:            @main-bg;
     text-color:                  @main-fg;
 }
+
+
+// Modes //
 mode-switcher {
-    orientation:                 vertical;
-    width:                       115px;
+    orientation:                 horizontal;
     enabled:                     true;
-    padding:                     15px;
-    spacing:                     10px;
-    background-color:            transparent;
+    padding:                     30px 160px 30px 160px;
+    spacing:                     50px;
+    background-color:            #022e3f3f;
 }
 button {
     cursor:                      pointer;
+    padding:                     30px;
     border-radius:               50px;
-    background-color:            @main-sb;
+    background-color:            @main-bg;
     text-color:                  @main-fg;
 }
 button selected {
@@ -106,9 +100,10 @@ button selected {
 
 // Elements //
 element {
+    orientation:                 vertical;
     enabled:                     true;
-    spacing:                     20px;
-    padding:                     9px;
+    spacing:                     10px;
+    padding:                     10px;
     border-radius:               25px;
     cursor:                      pointer;
     background-color:            transparent;
@@ -124,14 +119,14 @@ element selected.normal {
     text-color:                  @select-fg;
 }
 element-icon {
-    size:                        47px;
+    size:                        90px;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;

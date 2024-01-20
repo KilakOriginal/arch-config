@@ -93,17 +93,15 @@ path+=(
     $(ruby -e 'puts File.join(Gem.user_dir, "bin")')
 )
 
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# You may need to manually set your language environment
+# Language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -113,9 +111,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
 alias ls="colorls --sd -A"
 alias rnote="flatpak run com.github.flxzt.rnote"
 
@@ -124,5 +120,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#[ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
