@@ -9,7 +9,7 @@ This is my Arch Linux configuration.
 
 - [Wayland](https://wayland.freedesktop.org/)
 - [Hyprland](https://hyprland.org/)
-- [Hyprpaper](https://github.com/hyprwm/hyprpaper)
+- [swww](https://github.com/LGFae/swww)
 - [Hyprshot](https://github.com/Gustash/Hyprshot)
 - [Flameshot](https://github.com/flameshot-org/flameshot/releases)
 - [Waybar](https://github.com/Alexays/Waybar)
