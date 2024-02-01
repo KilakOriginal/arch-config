@@ -121,7 +121,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#[ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
+#[ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
 [ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
