@@ -113,7 +113,17 @@ fi
 #
 # Aliases
 alias ls="colorls --sd -A"
+alias cd="z"
 alias rnote="flatpak run com.github.flxzt.rnote"
+
+c()
+{
+	gcc "$1.c" -o "$2.out" -Wall -Werror -Wpedantic
+}
+cr()
+{
+	gcc "$1.c" -o "$2.out" -Wall -Werror -Wpedantic && "./$2.out"
+}
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -125,3 +135,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 #[ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
 [ -f "/home/malik/.ghcup/env" ] && source "/home/malik/.ghcup/env" # ghcup-env
+eval "$(zoxide init zsh)"

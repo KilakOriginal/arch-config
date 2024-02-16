@@ -29,6 +29,7 @@ This is my Arch Linux configuration.
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
     - [fzf](https://github.com/junegunn/fzf.git)
     - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Rofi](https://github.com/lbonn/rofi)
 - [wlogout](https://github.com/ArtsyMacaw/wlogout)
 
