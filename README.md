@@ -15,7 +15,7 @@ This is my Arch Linux configuration.
 - [Waybar](https://github.com/Alexays/Waybar)
 - [wvkbd](https://github.com/jjsullivan5196/wvkbd)
 - [Neovim](https://neovim.io/)
-    - [packer.nvim](https://github.com/wbthomason/packer.nvim)
+    - [lazy.nvim](https://github.com/folke/lazy.nvim)
     - For a list of plugins see `./config/nvim/lua/malik/packer.lua`
 - [WezTerm](https://wezfurlong.org/wezterm/)
 - [kitty](https://sw.kovidgoyal.net/kitty/)
