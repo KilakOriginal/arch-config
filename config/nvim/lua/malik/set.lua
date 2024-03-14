@@ -1,7 +1,8 @@
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
-local tab_width = 8
+local tab_width = 4
+vim.opt.expandtab = true
 vim.opt.tabstop = tab_width
 vim.opt.softtabstop = tab_width
 vim.opt.shiftwidth = tab_width
@@ -30,3 +31,4 @@ vim.g.mapleader = " "
 
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
+vim.wo.fillchars='eob: '

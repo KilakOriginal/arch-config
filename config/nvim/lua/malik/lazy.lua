@@ -1,53 +1,68 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.g.mapleader = ' '
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+local plugins = {
 
   -- Telescope fuzzy finder
-  use {
+  {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
     -- or                          , branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    dependencies = { {'nvim-lua/plenary.nvim'} }
+  },
 
-  -- Colour Scheme
-  use {
+  -- Colour Schemes
+  {
     'EdenEast/nightfox.nvim',
     as = 'carbonfox',
-    config = function()
-      vim.cmd('colorscheme carbonfox')
+    --config = function()
+      --vim.cmd('colorscheme carbonfox')
+    --end
+  },
+  {
+    'lunarvim/synthwave84.nvim',
+    as = 'synthwave84',
+    config = function ()
+      vim.cmd('colorscheme synthwave84')
     end
-  }
+  },
 
   -- Treesitter syntax highlighting
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use 'nvim-treesitter/playground'
+  'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
+  'nvim-treesitter/playground',
 
-  use 'theprimeagen/harpoon'
+  'theprimeagen/harpoon',
 
-  use 'mbbill/undotree'
+  'mbbill/undotree',
 
-  use 'tpope/vim-fugitive'
+  'tpope/vim-fugitive',
 
   -- LSP
-  use {
+  {
     "williamboman/mason.nvim",
-    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-  }
+    build = ":MasonUpdate" -- :MasonUpdate updates registry contents
+  },
 
-  use {
+  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
-    requires = {
+    dependencies = {
       -- LSP Support
       {'neovim/nvim-lspconfig'},             -- Required
       {                                      -- Optional
         'williamboman/mason.nvim',
-        run = function()
+        build = function()
         pcall(vim.cmd, 'MasonUpdate')
         end,
       },
@@ -57,9 +72,9 @@ return require('packer').startup(function(use)
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'},     -- Required
     }
-  }
+  },
 
-  use({
+  {
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
@@ -67,22 +82,24 @@ return require('packer').startup(function(use)
       -- Configuration here, or leave empty to use defaults
     })
     end
-  })
+  },
 
-  use {
+  {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
-  }
+  },
 
-  use {
+  {
   'glepnir/dashboard-nvim',
   as = 'dashboard',
   event = 'VimEnter',
-  requires = {'nvim-tree/nvim-web-devicons'}
-  }
+  dependencies = {'nvim-tree/nvim-web-devicons'}
+  },
 
-  use 'feline-nvim/feline.nvim'
+  'feline-nvim/feline.nvim',
 
-  use 'mrcjkb/haskell-tools.nvim'
+  'mrcjkb/haskell-tools.nvim',
 
-end)
+}
+
+require("lazy").setup(plugins, {})
