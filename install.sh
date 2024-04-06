@@ -41,6 +41,7 @@ pacman -Sy --noconfirm wireplumber
 pacman -Sy --noconfirm bluez
 pacman -Sy --noconfirm bluez-utils
 pacman -Sy --noconfirm ruby
+pacman -Sy --noconfirm zsh
 
 # aur packages
 yay --sudoloop --noconfirm swww
@@ -56,6 +57,8 @@ yay --sudoloop --noconfirm sddm-sugar-candy-git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # systemctl services
 #TODO
 
