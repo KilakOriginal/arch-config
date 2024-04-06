@@ -31,7 +31,7 @@ window#waybar {
     background: #39545e;
     color: #eff6e0;
     transition: all 0.3s ease-in-out;
-    opacity:0.5;
+    opacity: 0.5;
 }
 
 #workspaces button.active {
@@ -39,7 +39,7 @@ window#waybar {
     min-width: 45px;
     background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
-    opacity:0.9;
+    opacity: 0.9;
 }
 
 #workspaces button:hover {
