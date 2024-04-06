@@ -53,6 +53,11 @@ yay --sudoloop --noconfirm wlogout
 yay --sudoloop --noconfirm sddm-sugar-candy-git
 
 
+<<<<<<< Updated upstream
+=======
+#
+
+>>>>>>> Stashed changes
 # systemctl services
 #TODO
 
