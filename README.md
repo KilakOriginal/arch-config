@@ -21,6 +21,7 @@ This is my Arch Linux configuration.
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [Nemo](https://github.com/linuxmint/nemo)
 - [Swaylock-effects](https://github.com/mortie/swaylock-effects)
+- [swayidle](https://github.com/swaywm/swayidle)
 - [SDDM](https://github.com/sddm/sddm)
     - [Sugar Candy theme](https://github.com/Kangie/sddm-sugar-candy)
 - [Oh My Zsh](https://ohmyz.sh/)
