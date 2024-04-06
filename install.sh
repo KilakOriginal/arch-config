@@ -40,7 +40,7 @@ pacman -Sy --noconfirm pipewire-alsa
 pacman -Sy --noconfirm wireplumber
 pacman -Sy --noconfirm bluez
 pacman -Sy --noconfirm bluez-utils
-
+pacman -Sy --noconfirm ruby
 
 # aur packages
 yay --sudoloop --noconfirm swww
@@ -52,7 +52,8 @@ yay --sudoloop --noconfirm swayidle
 yay --sudoloop --noconfirm wlogout
 yay --sudoloop --noconfirm sddm-sugar-candy-git
 
-
+# curl 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 <<<<<<< Updated upstream
 =======
 #
