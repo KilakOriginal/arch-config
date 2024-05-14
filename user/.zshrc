@@ -114,11 +114,11 @@ fi
 # Aliases
 alias ls="colorls --sd -A"
 alias cd="z"
-alias rnote="flatpak run com.github.flxzt.rnote"
+# alias rnote="flatpak run com.github.flxzt.rnote"
 
 c()
 {
-	gcc "$1.c" -o "$2.out" -Wall -Werror -Wpedantic
+	gcc "$1.c" -o "$2.out" -Wall -Werror -Wextra -Wpedantic
 }
 cr()
 {
