@@ -214,7 +214,7 @@ encd() {
         fi
     done
 }
-decd()
+dec()
 {
     if [ $# -eq 0 ]; then
         echo "Usage: decd <filename> [<filename2> ...]"
@@ -224,6 +224,22 @@ decd()
     for file in "$@"; do
         if [ -f "$file" ]; then
             gpg --output "${file%.gpg}" --decrypt "$file" && rm "$file"
+        else
+            echo "Unable to decrypt '$file'; no such file!"
+        fi
+    done
+}
+
+decd()
+{
+    if [ $# -eq 0 ]; then
+        echo "Usage: decd <filename> [<filename2> ...]"
+        return 1
+    fi
+
+    for file in "$@"; do
+        if [ -f "$file" ]; then
+            gpg --output "${file%.gpg}" --decrypt "$file"
         else
             echo "Unable to decrypt '$file'; no such file!"
         fi
