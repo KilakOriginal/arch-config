@@ -118,11 +118,116 @@ alias cd="z"
 
 c()
 {
+    if [ $# -ne 2 ]; then
+        echo "Usage: c <input_file> <output_file>"
+        return 1
+    fi
+
 	gcc "$1.c" -o "$2.out" -Wall -Werror -Wextra -Wpedantic
 }
 cr()
 {
+    if [ $# -ne 2 ]; then
+        echo "Usage: cr <input_file> <output_file>"
+        return 1
+    fi
+
 	gcc "$1.c" -o "$2.out" -Wall -Werror -Wpedantic && "./$2.out"
+}
+enc() {
+    declare -a recipients=()
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -r)
+                shift
+                recipients+=("$1")
+                shift
+                ;;
+            *)
+                break
+                ;;
+        esac
+    done
+
+    if [ ${#recipients[@]} -eq 0 ]; then
+        echo "Usage: encd -r <recipient1> [-r <recipient2> ...] <filename> [<filename2> ...]"
+        return 1
+    fi
+
+    if [ $# -eq 0 ]; then
+        echo "Usage: encd -r <recipient1> [-r <recipient2> ...] <filename> [<filename2> ...]"
+        return 1
+    fi
+
+    for file in "$@"; do
+        if [ "$file" != "-r" ]; then
+            if [ -f "$file" ]; then
+                gpg_args=()
+                for recipient in "${recipients[@]}"; do
+                    gpg_args+=("-r" "$recipient")
+                done
+                gpg "${gpg_args[@]}" --output "$file.gpg" --encrypt "$file"
+            else
+                echo "Unable to encrypt '$file'; no such file!"
+            fi
+        fi
+    done
+}
+encd() {
+    declare -a recipients=()
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -r)
+                shift
+                recipients+=("$1")
+                shift
+                ;;
+            *)
+                break
+                ;;
+        esac
+    done
+
+    if [ ${#recipients[@]} -eq 0 ]; then
+        echo "Usage: encd -r <recipient1> [-r <recipient2> ...] <filename> [<filename2> ...]"
+        return 1
+    fi
+
+    if [ $# -eq 0 ]; then
+        echo "Usage: encd -r <recipient1> [-r <recipient2> ...] <filename> [<filename2> ...]"
+        return 1
+    fi
+
+    for file in "$@"; do
+        if [ "$file" != "-r" ]; then
+            if [ -f "$file" ]; then
+                gpg_args=()
+                for recipient in "${recipients[@]}"; do
+                    gpg_args+=("-r" "$recipient")
+                done
+                gpg "${gpg_args[@]}" --output "$file.gpg" --encrypt "$file" && rm -r "$file"
+            else
+                echo "Unable to encrypt '$file'; no such file!"
+            fi
+        fi
+    done
+}
+decd()
+{
+    if [ $# -eq 0 ]; then
+        echo "Usage: decd <filename> [<filename2> ...]"
+        return 1
+    fi
+
+    for file in "$@"; do
+        if [ -f "$file" ]; then
+            gpg --output "${file%.gpg}" --decrypt "$file" && rm "$file"
+        else
+            echo "Unable to decrypt '$file'; no such file!"
+        fi
+    done
 }
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme

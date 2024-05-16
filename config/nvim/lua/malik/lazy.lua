@@ -110,7 +110,7 @@ local plugins = {
 
   'mrcjkb/haskell-tools.nvim',
 
+  'hiphish/rainbow-delimiters.nvim'
 }
-
 require("lazy").setup(plugins, {})
 
