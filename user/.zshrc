@@ -223,7 +223,7 @@ dec()
 
     for file in "$@"; do
         if [ -f "$file" ]; then
-            gpg --output "${file%.gpg}" --decrypt "$file" && rm "$file"
+            gpg --output "${file%.gpg}" --decrypt "$file"
         else
             echo "Unable to decrypt '$file'; no such file!"
         fi
@@ -239,7 +239,7 @@ decd()
 
     for file in "$@"; do
         if [ -f "$file" ]; then
-            gpg --output "${file%.gpg}" --decrypt "$file"
+            gpg --output "${file%.gpg}" --decrypt "$file" && rm "$file"
         else
             echo "Unable to decrypt '$file'; no such file!"
         fi
