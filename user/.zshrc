@@ -116,6 +116,15 @@ alias ls="colorls --sd -A"
 alias cd="z"
 # alias rnote="flatpak run com.github.flxzt.rnote"
 
+pdf()
+{
+    if [ $# -ne 1 ]; then
+        echo "Usage: pdf <file>"
+        return 1
+    fi
+
+    firefox "$1" & disown
+}
 c()
 {
     if [ $# -ne 2 ]; then
