@@ -116,7 +116,7 @@ alias ls="colorls --sd -A"
 alias cd="z"
 # alias rnote="flatpak run com.github.flxzt.rnote"
 
-pdf()
+view()
 {
     if [ $# -ne 1 ]; then
         echo "Usage: pdf <file>"
