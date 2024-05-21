@@ -143,6 +143,55 @@ cr()
 
 	gcc "$1.c" -o "$2.out" -Wall -Werror -Wpedantic && "./$2.out"
 }
+except() {
+    local patterns=()
+    local command=()
+    local files=()
+    
+    while [[ "$1" == "-p" ]]; do
+        shift
+        if [[ -z "$1" ]]; then
+            echo "Error: Missing pattern after -p"
+            return 1
+        fi
+        patterns+=("$1")
+        shift
+    done
+    
+    if [[ -z "$1" ]]; then
+        echo "Error: Missing command"
+        return 1
+    fi
+    
+    while [[ "$1" && "$1" != *.* ]]; do
+        command+=("$1")
+        shift
+    done
+    
+    while [[ "$1" ]]; do
+        files+=("$1")
+        shift
+    done
+    
+    if [[ ${#files[@]} -eq 0 ]]; then
+        echo "Error: No files specified"
+        return 1
+    fi
+    
+    local grep_pattern
+    grep_pattern=$(printf "|%s" "${patterns[@]}")
+    grep_pattern=${grep_pattern:1}
+    
+    local filtered_files
+    filtered_files=($(printf "%s\n" "${files[@]}" | grep -Ev "$grep_pattern"))
+    
+    if [[ ${#filtered_files[@]} -eq 0 ]]; then
+        echo "Error: No files left after filtering"
+        return 1
+    fi
+    
+    "${command[@]}" "${filtered_files[@]}"
+}
 enc() {
     declare -a recipients=()
 
@@ -216,7 +265,7 @@ encd() {
                 for recipient in "${recipients[@]}"; do
                     gpg_args+=("-r" "$recipient")
                 done
-                gpg "${gpg_args[@]}" --output "$file.gpg" --encrypt "$file" && rm -r "$file"
+                gpg "${gpg_args[@]}" --output "$file.gpg" --encrypt "$file" && rm "$file"
             else
                 echo "Unable to encrypt '$file'; no such file!"
             fi
