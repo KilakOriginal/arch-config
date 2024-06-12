@@ -114,8 +114,17 @@ fi
 # Aliases
 alias ls="colorls --sd -A"
 alias cd="z"
+alias diary="nvim ~/MEGA/Personal/diary/$(date +%Y-%m-%d)"
 # alias rnote="flatpak run com.github.flxzt.rnote"
 
+run() {
+    if [ -z "$1" ]; then
+        echo "Usage: run <command> [args...]"
+        return 1
+    fi
+
+    "$@" > /dev/null 2>&1 & disown
+}
 view()
 {
     if [ $# -ne 1 ]; then
@@ -287,7 +296,6 @@ dec()
         fi
     done
 }
-
 decd()
 {
     if [ $# -eq 0 ]; then
