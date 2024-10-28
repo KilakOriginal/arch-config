@@ -24,17 +24,18 @@ local plugins = {
 
   -- Colour Schemes
   {
-    'EdenEast/nightfox.nvim',
-    as = 'carbonfox',
-    --config = function()
-      --vim.cmd('colorscheme carbonfox')
-    --end
+    'RRethy/nvim-base16',
+    as = 'base16',
+    priority = 1000,
+    config = function ()
+      vim.cmd([[colorscheme base16-atelier-seaside-light]])
+    end
   },
   {
-    'lunarvim/synthwave84.nvim',
-    as = 'synthwave84',
-    config = function ()
-      vim.cmd('colorscheme synthwave84')
+    'feline-nvim/feline.nvim',
+    as = 'feline',
+    config = function()
+      vim.cmd([[set termguicolors]])
     end
   },
 
@@ -75,22 +76,20 @@ local plugins = {
   },
 
   {
-  "iamcco/markdown-preview.nvim",
-  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  build = "cd app && yarn install",
-  init = function()
-    vim.g.mkdp_filetypes = { "markdown" }
-  end,
-  ft = { "markdown" },
+    "iamcco/markdown-preview.nvim",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
 
   {
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-      -- Configuration here, or leave empty to use defaults
-    })
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
     end
   },
 
@@ -106,11 +105,12 @@ local plugins = {
   dependencies = {'nvim-tree/nvim-web-devicons'}
   },
 
-  'feline-nvim/feline.nvim',
 
   'mrcjkb/haskell-tools.nvim',
 
-  'hiphish/rainbow-delimiters.nvim'
+  'hiphish/rainbow-delimiters.nvim',
+
+  'github/copilot.vim'
 }
 require("lazy").setup(plugins, {})
 

@@ -112,10 +112,10 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Aliases
-alias ls="colorls --sd -A"
+alias ls="colorls --light --sd -A"
 alias cd="z"
 alias diary="nvim ~/MEGA/Personal/diary/$(date +%Y-%m-%d)"
-# alias rnote="flatpak run com.github.flxzt.rnote"
+alias rnote="flatpak run com.github.flxzt.rnote"
 
 run() {
     if [ -z "$1" ]; then

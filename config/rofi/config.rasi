@@ -12,7 +12,7 @@ configuration {
     icon-theme:                  "candy";
 }
 
-@theme "~/.config/rofi/themes/theme.rasi"
+@theme "~/.config/rofi/themes/Atelier-Seaside.rasi"
 
 
 // Main //

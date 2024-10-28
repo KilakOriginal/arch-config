@@ -6,14 +6,14 @@
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0.8);
-    color: #eff6e0;
+    color: #cfe8cf;
     background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 #workspaces {
-    background: #eff6e0;
+    background: #cfe8cf;
     margin: 0;
     padding: 4px 2px;
     border-radius: 18px;
@@ -29,7 +29,7 @@ window#waybar {
     border: none;
     border-radius: 30px;
     background: #39545e;
-    color: #eff6e0;
+    color: #cfe8cf;
     transition: all 0.3s ease-in-out;
     opacity: 0.5;
 }
@@ -62,7 +62,7 @@ window#waybar {
     margin: 0 0 0 8px;
     padding: 1px 10px;
     color: #01161e;
-    background: #eff6e0;
+    background: #cfe8cf;
     opacity: 0.8;
     border-radius: 18px;
     border: none;
@@ -72,7 +72,7 @@ window#waybar {
     margin: 0 16px 0 16px;
     padding: 1px 10px;
     color: #01161e;
-    background: #eff6e0;
+    background: #cfe8cf;
     opacity: 0.8;
     border-radius: 18px;
     border: none;
@@ -90,7 +90,7 @@ window#waybar {
     margin: 0 8px;
     padding: 1px 10px;
     color: #01161e;
-    background: #eff6e0;
+    background: #cfe8cf;
     opacity: 0.8;
     border-radius: 18px;
     border: none;
@@ -99,7 +99,7 @@ window#waybar {
 }
 
 #window {
-    background: #eff6e0;
+    background: #cfe8cf;
     padding: 1px 10px;
     border-radius: 18px;
     border: none;
@@ -121,7 +121,7 @@ window#waybar.empty #window {
 }
 
 #battery.charging, #battery.plugged {
-    color: #38b000;
+    color: #29a329;
 }
 
 #battery.warning:not(.charging) {
@@ -129,10 +129,10 @@ window#waybar.empty #window {
 }
 
 #battery.critical:not(.charging) {
-    color: #bc4749;
+    color: #E6193C; /*bc4749*/
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #131513;
 }
 

@@ -1,7 +1,7 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
-  'tsserver',  -- typescript/javascript
+  -- broken as of 27/09/2024 'tsserver',  -- typescript/javascript
   'pylsp',  -- python
   'clangd', -- c/c++
   'neocmake',  -- cmake
